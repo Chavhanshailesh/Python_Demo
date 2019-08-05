@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <body><center>
+      <h3>
+         <a href = "{{ url_for('show_all') }}">HOME PAGE</a>
+      </h3>
+
+      <hr/>
+
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Name</label><br>
+         <input type = "text" name = "name" placeholder = "Name" /><br>
+         <label for = "email">City</label><br>
+         <input type = "text" name = "city" placeholder = "city" /><br>
+         <label for = "PIN">Pin</label><br>
+         <input type = "text" name = "pin" placeholder = "pin" /><br><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+      </center>
+   </body>
+</html>
